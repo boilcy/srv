@@ -1,0 +1,6 @@
+# repository data files
+/data/*
+!/data/.gitkeep
+
+# Oddish
+.DS_Store
