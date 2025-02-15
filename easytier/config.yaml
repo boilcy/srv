@@ -1,0 +1,24 @@
+instance_name = "default"
+ipv4 = "10.121.121.1/24"
+dhcp = false
+listeners = [
+    "tcp://0.0.0.0:11010",
+    "tcp://[::]:11010",
+]
+exit_nodes = []
+rpc_portal = "127.0.0.1:15889"
+
+[flags]
+default_protocol = "tcp"
+dev_name = ""
+enable_encryption = true
+enable_ipv6 = true
+mtu = 1380
+latency_first = true
+enable_exit_node = false
+no_tun = false
+use_smoltcp = false
+foreign_network_whitelist = "*"
+disable_p2p = false
+relay_all_peer_rpc = false
+config_server="udp://127.0.0.1:22020/admin"

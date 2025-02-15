@@ -1,0 +1,14 @@
+services:
+  openwebui:
+    container_name: openwebui
+    image: ghcr.io/open-webui/open-webui:main
+    network_mode: host
+    volumes:
+      - open-webui:/app/backend/data
+    environment:
+      - GLOBAL_LOG_LEVEL="DEBUG"
+      - AIOHTTP_CLIENT_TIMEOUT=300
+      - OLLAMA_BASE_URL=http://127.0.0.1:11434
+      - PORT=80
+volumes:
+  open-webui:

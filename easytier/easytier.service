@@ -1,0 +1,15 @@
+[Unit]
+Description=Easytier Network Service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+ExecStart=/usr/local/bin/easytier-core -c /etc/easytier/config.yaml
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
