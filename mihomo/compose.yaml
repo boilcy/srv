@@ -1,0 +1,26 @@
+#UI
+services:
+  metacubexd:
+    image: ghcr.io/metacubex/metacubexd
+    container_name: metacubexd
+    ports:
+      - "17880:80"
+    restart: always
+    tty: true
+    stdin_open: true
+    extra_hosts:
+        - "host.docker.interal:host-gateway"
+#内核
+  meta:
+    image: docker.io/metacubex/mihomo:Alpha
+    container_name: meta
+    pid: host
+    ipc: host
+    network_mode: host
+    volumes:
+      - /home/env/mihomo:/root/.config/mihomo
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - ALL
+    restart: always
+    tty: true
